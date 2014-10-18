@@ -227,7 +227,7 @@ ghStarsAbs.polymer = [
 Object.keys(ghStarsAbs).forEach(function(framework) {
   //var min = ghStarsAbs[framework][0];
   while (ghStarsAbs[framework].length !== soNew[framework].length) {
-    ghStarsAbs[framework].unshift(0);
+    ghStarsAbs[framework].unshift(-1000);
   }
 });
 
@@ -283,13 +283,13 @@ function _normArray(arr) {
       prev = arr[r.length - 1];
     }
 
-    if (prev === 0) {
-      r.push(0);
+    if (prev <= 0) {
+      r.push(-1000);
       return r;
     }
 
-    growth = (val - prev) / prev;
-    r.push(growth * 100);
+    growth = Math.floor((val - prev) * 100 / prev);
+    r.push(growth);
     return r;
   }, []);
 }
@@ -303,6 +303,11 @@ function _newArray(arr) {
     }
 
     var old = arr[r.length - 1];
+
+    if (old <= 0) {
+      r.push(-1000);
+      return r;
+    }
 
     r.push(val - old);
     return r;
