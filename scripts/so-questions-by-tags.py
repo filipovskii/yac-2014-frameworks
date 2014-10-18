@@ -15,21 +15,14 @@ FRAMEWORKS = [
   'polymer',
 ]
 
-DATES = [
-  '2013-10-01',
-  '2013-11-01',
-  '2013-12-01',
-  '2014-01-01',
-  '2014-02-01',
-  '2014-03-01',
-  '2014-04-01',
-  '2014-05-01',
-  '2014-06-01',
-  '2014-07-01',
-  '2014-08-01',
-  '2014-09-01',
-  '2014-10-01',
-]
+DATES = []
+
+for year in range(2010, 2015):
+  for month in range(1, 13):
+    if year == 2014 and month == 11:
+      break
+    DATES.append('{year}-{month:02}-01'.format(year=year, month=month))
+
 
 
 def run():
@@ -43,19 +36,12 @@ def run():
 
       number_of_questions = total_questions(
           session, framework, date_from, date_to)
-      results[framework][date_from] = number_of_questions
+      results[framework][date_from + ' - ' + date_to] = number_of_questions
 
-  header = 'framework'
-  for i in xrange(0, len(DATES) - 1):
-    header = header + ',' + DATES[i][:-3]
-
-  print header
+  print ','.join(['framework', 'date', 'questions'])
   for framework in results:
-    f_str = framework
-    for result in results[framework].values():
-      f_str = f_str + ',' + str(result)
-
-    print f_str
+    for rng, result in results[framework].items():
+      print ','.join([framework, rng, str(result)])
 
 
 def from_utc_to_utime(utcTime, fmt="%Y-%m-%d"):

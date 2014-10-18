@@ -1,0 +1,8 @@
+{
+  "name": "charts",
+  "private": true,
+  "dependencies": {
+    "highcharts": "~4.0.4"
+  },
+  "devDependencies": {}
+}

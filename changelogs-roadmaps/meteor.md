@@ -97,3 +97,12 @@ Explore the most popular, trusted, and reliable packages to install in
 your apps.
 
 2014-02-20 New Atmosphere beta is out
+
+
+## Crazy June (+4,583 stars)
+
+23.06.14 Meteor 0.8.2: improved password storage
+23.06.14 Announcing the 2014 Meteor Challenge
+20.06.14 June Devshop London: Lookback, the multi-device web, and more
+12.06.14 Meteor Summer Hackathon 2014
+03.06.14 Meteor and Famo.us on mobile: why JavaScript will win over native
