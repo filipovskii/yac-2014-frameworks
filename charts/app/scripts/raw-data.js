@@ -8,6 +8,7 @@ var dates = [],
     ghStarsNew = {},
     ghStarsAbs = {},
     ghStarsNorm = {},
+    colorByFr = {},
     month, year, frameworks, tags;
 
 
@@ -25,6 +26,7 @@ frameworks = [
 ];
 
 
+/* TAGS */
 tags = {
   'binding': {
     'twoWay': ['angular', 'ember', 'polymer', 'knockout'],
@@ -38,6 +40,17 @@ tags = {
     'reactive': ['react', 'meteor']
   }
 };
+
+
+/* COLORS */
+colorByFr.Polymer = '#FE6599';
+colorByFr.Angular = '#DD1B16';
+colorByFr.Knockout = '#2b6525';
+colorByFr.React = '#61DAFB';
+colorByFr.Backbone = '#0071B5';
+colorByFr.Ember = '#B9824C';
+colorByFr.Meteor = '#000000';
+
 
 /* DATES */
 monthNameByNum = [
@@ -244,6 +257,7 @@ window.GITHUB_ABS_STARS = ghStarsAbs;
 window.GITHUB_NORM_STARS = ghStarsNorm;
 
 window.FRAMEWORKS = frameworks;
+window.COLOR_BY_FRAMEWORK = colorByFr;
 
 
 function _absArray(arr) {

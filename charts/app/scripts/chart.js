@@ -3,15 +3,13 @@
 
 (function() {
   var Chart = function() {
-    this.skip = 0;
+    this.from = 0;
+    this.to = undefined;
   };
 
-  Chart.prototype.addSeries = function addChartData(name, data) {
+  Chart.prototype.addSeries = function addChartSeries(s) {
     this.series = this.series || [];
-    this.series.push({
-      name: name,
-      data: data
-    });
+    this.series.push(s);
     return this;
   };
 
@@ -46,8 +44,14 @@
   };
 
 
-  Chart.prototype.setSkip = function setChartSkip(skip) {
-    this.skip = skip;
+  Chart.prototype.setFrom = function setChartFrom(from) {
+    this.from = from;
+    return this;
+  };
+
+
+  Chart.prototype.setTo = function setChartTo(to) {
+    this.to = to;
     return this;
   };
 
@@ -81,7 +85,7 @@
           text: 'Month'
         },
 
-        categories: this.categories.slice(this.skip)
+        categories: this.categories.slice(this.from, this.to)
 
       },
 
@@ -95,7 +99,9 @@
       series: this.series.map(function(s) {
         return {
           name: s.name,
-          data: s.data.slice(this.skip)
+          data: s.data.slice(this.from, this.to),
+          color: s.color,
+          lineWidth: 3
         };
       }, this)
 

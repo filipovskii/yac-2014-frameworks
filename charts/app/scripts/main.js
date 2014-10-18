@@ -2,6 +2,9 @@
 
 (function() {
 
+var configForm = document.querySelector('form');
+
+function render(frameworks, from, to) {
 var soNewQuestionsChart = new window.Chart(),
     soAbsQuestionsChart = new window.Chart(),
     soNormQuestionsChart = new window.Chart(),
@@ -17,7 +20,7 @@ var soNewQuestionsChart = new window.Chart(),
       ghNormStarsChart
     ];
 
-
+from = from || 0;
 
 soNewQuestionsChart
   .setTitle('Number of new SO questions per month')
@@ -36,7 +39,7 @@ soAbsQuestionsChart
 soNormQuestionsChart
   .setTitle('Normalized number of new SO questions per month')
   .setSubTitle('Source: StackOverflow.com')
-  .setYAxisName('Questions')
+  .setYAxisName('Questions Growth, %')
   .setDOMId('so-questions-norm');
 
 
@@ -57,19 +60,53 @@ ghAbsStarsChart
 ghNormStarsChart
   .setTitle('Normalized growth of github stars')
   .setSubTitle('Source: githubarchive.org')
-  .setYAxisName('Growth')
+  .setYAxisName('Stars Growth, %')
   .setDOMId('gh-stars-norm');
 
-window.FRAMEWORKS.forEach(function(fr) {
-  var frLower = fr.toLowerCase();
+frameworks.forEach(function(fr) {
+  var frLower = fr.toLowerCase(),
+      color = window.COLOR_BY_FRAMEWORK[fr];
 
-  soNewQuestionsChart.addSeries(fr, window.STACK_OVERFLOW_NEW[frLower]);
-  soAbsQuestionsChart.addSeries(fr, window.STACK_OVERFLOW_ABS[frLower]);
-  soNormQuestionsChart.addSeries(fr, window.STACK_OVERFLOW_NORM[frLower]);
+  // SO
 
-  ghNewStarsChart.addSeries(fr, window.GITHUB_NEW_STARS[frLower]);
-  ghAbsStarsChart.addSeries(fr, window.GITHUB_ABS_STARS[frLower]);
-  ghNormStarsChart.addSeries(fr, window.GITHUB_NORM_STARS[frLower]);
+  soNewQuestionsChart.addSeries({
+    name: fr,
+    color: color,
+    data: window.STACK_OVERFLOW_NEW[frLower]
+  });
+
+  soAbsQuestionsChart.addSeries({
+    name: fr,
+    color: color,
+    data: window.STACK_OVERFLOW_ABS[frLower]
+  });
+
+  soNormQuestionsChart.addSeries({
+    name: fr,
+    color: color,
+    data: window.STACK_OVERFLOW_NORM[frLower]
+  });
+
+
+  // GH
+
+  ghNewStarsChart.addSeries({
+    name: fr,
+    color: color,
+    data: window.GITHUB_NEW_STARS[frLower]
+  });
+
+  ghAbsStarsChart.addSeries({
+    name: fr,
+    color: color,
+    data: window.GITHUB_ABS_STARS[frLower]
+  });
+
+  ghNormStarsChart.addSeries({
+    name: fr,
+    color: color,
+    data: window.GITHUB_NORM_STARS[frLower]
+  });
 });
 
 
@@ -77,7 +114,38 @@ allCharts.forEach(function (chart) {
 
   chart
     .setXAxis(window.DATES)
+    .setFrom(from)
+    .setTo(to)
     .draw();
 });
+
+}
+
+configForm.addEventListener('change', function() {
+  var frameworks = {}, from = 0, to = 56, toRender;
+  Array.prototype.forEach.call(configForm, function(inp) {
+    if (inp.name === 'from') {
+      from = parseInt(inp.value);
+      return;
+    }
+
+    if (inp.name === 'to') {
+      to = parseInt(inp.value) + 1;
+      return;
+    }
+
+    frameworks[inp.name] = inp.checked;
+  });
+
+  toRender = Object.keys(frameworks).filter(function(fr) {
+    return frameworks[fr];
+  });
+
+  setTimeout(function() {
+    render(toRender, from, to);
+  }, 100);
+});
+
+render(window.FRAMEWORKS);
 
 })();
