@@ -20,20 +20,20 @@ var dates = [],
 /* FRAMEWORKS */
 
 frameworks = [
-  'Ember',
-  'Backbone',
-  'React',
   'Angular',
-  'Meteor',
-  'Knockout',
-  'Polymer',
-  'Om',
+  'Backbone',
+  'Ember',
   'Famous',
-  'Ionic',
+  'Flight',
   'Flux',
-  //'Ampersand',
+  'Ionic',
+  'Knockout',
   'Marionette',
-  'Flight'
+  'Meteor',
+  'Om',
+  'Polymer',
+  'React',
+  //'Ampersand',
 ];
 
 
@@ -424,7 +424,7 @@ Object.keys(tags).forEach(function(category) {
 
     tags[category][tag].forEach(function(fr) {
       soSumArr = _sumArray(soSumArr, soAbs[fr]);
-      ghStarsSumArr = _sumArray(ghStarsSumArr, ghStarsAbs[fr])
+      ghStarsSumArr = _sumArray(ghStarsSumArr, ghStarsAbs[fr]);
     });
 
     soAbsByTag[tag] = soSumArr;
@@ -530,4 +530,4 @@ function _sumArray(arr1, arr2) {
   }
 
   return res;
-};
+}

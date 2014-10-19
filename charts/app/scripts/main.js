@@ -145,8 +145,11 @@ allCharts.forEach(function (chart) {
 })();
 
 
-configForm.addEventListener('change', function() {
+document.querySelector('button').addEventListener('click', function(ev) {
   var frameworks = {}, from = 0, to = 56, toRender;
+
+  ev.preventDefault();
+
   Array.prototype.forEach.call(configForm, function(inp) {
     if (inp.name === 'from') {
       from = parseInt(inp.value);

@@ -96,6 +96,21 @@
         }
       },
 
+      plotOptions: {
+        spline: {
+          marker: {
+            enabled: false
+          }
+        }
+      },
+
+
+      tooltip: {
+        crosshairs: true,
+        shared: true
+      },
+
+
       series: this.series.map(function(s) {
         return {
           name: s.name,
