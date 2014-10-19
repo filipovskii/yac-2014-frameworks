@@ -7,6 +7,37 @@ WHERE type="WatchEvent"
     AND
     (
       (
+            repository_name="backbone.marionette"
+        AND repository_owner="marionettejs"
+      )
+      OR
+      (
+            repository_name="ionic"
+        AND repository_owner="driftyco"
+      )
+
+      OR
+      (
+            repository_name="famous"
+        AND repository_owner="Famous"
+      )
+      OR
+      (
+            repository_name="flight"
+        AND repository_owner="flightjs"
+      )
+      OR
+      (
+            repository_name="om"
+        AND repository_owner="swannodette"
+      )
+      OR
+      (
+            repository_name="flux"
+        AND repository_owner="facebook"
+      )
+      OR
+      (
             repository_name="ember.js"
         AND repository_owner="emberjs"
       )

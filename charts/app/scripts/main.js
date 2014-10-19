@@ -121,6 +121,30 @@ allCharts.forEach(function (chart) {
 
 }
 
+
+(function() {
+
+  var frDiv = document.querySelector('.frameworks');
+  window.FRAMEWORKS.forEach(function(fr) {
+    var frLabel = document.createElement('label'),
+        frInput = document.createElement('input');
+
+
+    frLabel.for = fr;
+    frLabel.innerText = fr;
+    frLabel.appendChild(frInput);
+
+    frInput.type = 'checkbox';
+    frInput.id = fr;
+    frInput.name = fr;
+    frInput.checked = true;
+
+    frDiv.appendChild(frLabel);
+  });
+
+})();
+
+
 configForm.addEventListener('change', function() {
   var frameworks = {}, from = 0, to = 56, toRender;
   Array.prototype.forEach.call(configForm, function(inp) {

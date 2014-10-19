@@ -1,0 +1,124 @@
+[
+  "Angular": {
+    "repos": [
+      {
+        "owner": "angular",
+        "name": "angular"
+      }
+    ],
+
+    "so-tags": ["angularjs"]
+  },
+
+  "React": {
+    "repos": [],
+    "so-tags": []
+  },
+
+
+  "Ember": {
+    "repos": [],
+    "so-tags": []
+  },
+
+
+  "Backbone": {
+    "repos": [],
+    "so-tags": []
+  },
+
+  "Meteor": {
+    "repos": [],
+    "so-tags": []
+  },
+
+  "Knockout": {
+    "repos": [],
+    "so-tags": []
+  },
+
+  "Polymer": {
+    "repos": [],
+    "so-tags": []
+  },
+
+  "Flight": {
+    "repos": [
+      {
+        "name": "flight",
+        "owner": "flightjs"
+      }
+    ],
+    "so-tags": ["twitter-flight"]
+  }
+
+  "Ampersand.js": {
+    "repos": [
+      {
+        "owner": "AmpersandJS",
+        "name": "ampersand-subcollection"
+      },
+      {
+        "owner": "AmpersandJS",
+        "name": "ampersand-state"
+      },
+      {
+        "owner": "AmpersandJS",
+        "name": "ampersand-dom-bindings"
+      }
+    ],
+    "so-tags": []
+  },
+
+  "Marionette": {
+    "repos": [
+      {
+        "owner": "marionettejs",
+        "name": "backbone.marionette"
+      }
+    ],
+    "so-tags": ["marionette"]
+  },
+
+  "Flux": {
+    "repos": [
+      {
+        "name": "flux",
+        "owner": "facebook"
+      }
+    ],
+    "so-tags": ["reactjs-flux"]
+  },
+
+  "Om": {
+    "repos": [
+      {
+        "name": "om",
+        "owner": "swannodette"
+      }
+    ],
+    "so-tags": ["om"]
+  },
+
+  "Famo.us": {
+    "repos": [
+      {
+        "name": "famous",
+        "owner": "Famous"
+      }
+    ],
+    "so-tags": ["famous-angular"]
+    "tags": ["mobile", "angular"]
+  },
+
+  "Ionic": {
+    "repos": [
+      {
+        "owner": "driftyco",
+        "name": "ionic"
+      }
+    ],
+    "so-tags": ["ionic-framework"],
+    "tags": ["mobile", "angular"]
+  }
+]

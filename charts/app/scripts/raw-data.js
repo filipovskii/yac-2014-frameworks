@@ -9,6 +9,10 @@ var dates = [],
     ghStarsAbs = {},
     ghStarsNorm = {},
     colorByFr = {},
+    soAbsByTag = {},
+    soNormByTag = {},
+    ghStarsAbsByTag = {},
+    ghStarsNormByTag = {},
     month, year, frameworks, tags;
 
 
@@ -22,22 +26,72 @@ frameworks = [
   'Angular',
   'Meteor',
   'Knockout',
-  'Polymer'
+  'Polymer',
+  'Om',
+  'Famous',
+  'Ionic',
+  'Flux',
+  //'Ampersand',
+  'Marionette',
+  'Flight'
 ];
 
 
 /* TAGS */
 tags = {
   'binding': {
-    'twoWay': ['angular', 'ember', 'polymer', 'knockout'],
-    'oneWay': ['backbone']
+    'binding/twoWay': [
+      'angular', 'ember', 'polymer', 'knockout', 'ionic', 'om'
+    ],
+    'binding/oneWay': ['backbone', 'marionette']
   },
+
   'model': {
-    'mv*': ['angular', 'ember', 'knockout', 'meteor'],
-    'component': ['react', 'polymer']
+    'model/mv*': [
+      'angular',
+      'ember',
+      'knockout',
+      'meteor',
+      'marionette',
+      'ionic'
+    ],
+    'model/component': ['react', 'polymer', 'om', 'flight'],
+    'model/flux': ['flux']
   },
+
   'templates': {
-    'reactive': ['react', 'meteor']
+    'templates/string': ['ember', 'backbone', 'marionette'],
+    'templates/dom': [
+      'angular',
+      'polymer',
+      'knockout',
+      'react',
+      'meteor'
+    ]
+  },
+
+  'swiss': {
+    'swiss/monolythic': [
+      'meteor', 'angular', 'ember',
+      'polymer', 'knockout',
+      'backbone', 'marionette'
+    ],
+    'swiss/SRP': ['react', 'flight', 'flux', 'om'],
+  },
+
+  'mob-desk': {
+    'mob-desk/mobile': ['famous', 'ionic'],
+    'mob-desk/desktop': [
+      'angular',
+      'react',
+      'flux',
+      'om',
+      'knockout',
+      'ember',
+      'marionette',
+      'meteor',
+      'polymer'
+    ]
   }
 };
 
@@ -156,6 +210,84 @@ soNew.react = [
 ];
 
 
+soNew.flight = [
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 3, 0, 1,
+  0, 3, 0, 0, 0, 0, 1, 1,
+  1, 1, 0, 1, 1, 1, 0, 0,
+  2
+];
+
+
+soNew.ampersand = [
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 2, 1
+];
+
+
+soNew.famous = [
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 1, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 1, 0, 35, 76,
+  66, 37, 42, 25
+];
+
+
+soNew.ionic = [
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 6, 9, 33, 52, 54, 86,
+  100, 156, 179
+];
+
+
+soNew.marionette = [
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 2, 1,
+  3, 17, 35, 38, 41, 23, 28,
+  23, 28, 35, 41, 56, 56, 76,
+  66, 90, 75, 75, 77, 82, 46,
+  74, 78, 75, 66, 53, 49, 54,
+  51, 70
+];
+
+
+soNew.flux = [
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 5, 0,
+  6, 4, 10
+];
+
+
+soNew.om = [
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 0, 0, 0, 0,
+  0, 0, 0, 0, 0, 3, 4, 5, 6,
+  4, 3, 6
+];
+
+
 /* Github stars */
 ghStarsAbs.angular = [
   453, 842, 1296, 2386, 3086, 3774,
@@ -224,10 +356,52 @@ ghStarsAbs.polymer = [
 ];
 
 
+ghStarsAbs.ionic = [
+  1656, 2404, 2853, 3547, 4392,
+  5012, 6248, 6862, 7905, 8900,
+  9755
+];
+
+
+ghStarsAbs.flux = [
+  1349, 1980, 2265
+];
+
+
+ghStarsAbs.famous = [
+  3095, 4480, 4796, 5032,
+  5430, 5645
+];
+
+
+ghStarsAbs.flight = [
+  4225, 4321, 4396, 4488, 4591,
+  4654, 4860, 4988, 5139, 5248,
+  5311, 5384, 5431, 5507, 5588
+];
+
+
+ghStarsAbs.marionette = [
+  1377, 1541, 1697, 1836, 2049,
+  2308, 2563, 2866, 3046, 3239,
+  3427, 3621, 3775, 3937, 4114,
+  4258, 4448, 4568, 4693, 4820,
+  4955, 5085, 5227, 5338, 5452
+];
+
+
+ghStarsAbs.om = [
+  964, 1475, 1655, 1821, 1980,
+  2188, 2342, 2458, 2606, 2757
+];
+
+
+
+
 Object.keys(ghStarsAbs).forEach(function(framework) {
   //var min = ghStarsAbs[framework][0];
   while (ghStarsAbs[framework].length !== soNew[framework].length) {
-    ghStarsAbs[framework].unshift(-1000);
+    ghStarsAbs[framework].unshift(0);
   }
 });
 
@@ -244,9 +418,32 @@ frameworks.forEach(function(fr) {
 });
 
 
+Object.keys(tags).forEach(function(category) {
+  Object.keys(tags[category]).forEach(function(tag) {
+    var soSumArr = [], ghStarsSumArr = [];
+
+    tags[category][tag].forEach(function(fr) {
+      soSumArr = _sumArray(soSumArr, soAbs[fr]);
+      ghStarsSumArr = _sumArray(ghStarsSumArr, ghStarsAbs[fr])
+    });
+
+    soAbsByTag[tag] = soSumArr;
+    soNormByTag[tag] = _normArray(soSumArr);
+
+    ghStarsAbsByTag[tag] = ghStarsSumArr;
+    ghStarsNormByTag[tag] = _normArray(ghStarsSumArr);
+  });
+
+});
+
+
 
 /* Exports */
 window.DATES = dates;
+window.TAGS = tags;
+
+window.FRAMEWORKS = frameworks;
+window.COLOR_BY_FRAMEWORK = colorByFr;
 
 window.STACK_OVERFLOW_NEW = soNew;
 window.STACK_OVERFLOW_ABS = soAbs;
@@ -256,9 +453,11 @@ window.GITHUB_NEW_STARS = ghStarsNew;
 window.GITHUB_ABS_STARS = ghStarsAbs;
 window.GITHUB_NORM_STARS = ghStarsNorm;
 
-window.FRAMEWORKS = frameworks;
-window.COLOR_BY_FRAMEWORK = colorByFr;
+window.STACK_OVERFLOW_ABS_BY_TAG = soAbsByTag;
+window.STACK_OVERFLOW_NORM_BY_TAG = soNormByTag;
 
+window.GITHUB_ABS_BY_TAG = ghStarsAbsByTag;
+window.GITHUB_NORM_BY_TAG = ghStarsNormByTag;
 
 function _absArray(arr) {
   return arr.reduce(function(r, val) {
@@ -284,7 +483,7 @@ function _normArray(arr) {
     }
 
     if (prev <= 0) {
-      r.push(-1000);
+      r.push(0);
       return r;
     }
 
@@ -305,7 +504,7 @@ function _newArray(arr) {
     var old = arr[r.length - 1];
 
     if (old <= 0) {
-      r.push(-1000);
+      r.push(0);
       return r;
     }
 
@@ -316,3 +515,19 @@ function _newArray(arr) {
 
 })();
 
+
+function _sumArray(arr1, arr2) {
+  var len = arr1.length,
+      res = [],
+      i;
+
+  if (arr2.length > len) {
+    len = arr2.length;
+  }
+
+  for (i = 0; i < len; i++) {
+    res[i] = (arr1[i] || 0) + (arr2[i] || 0);
+  }
+
+  return res;
+};

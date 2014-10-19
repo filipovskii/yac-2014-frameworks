@@ -64,7 +64,7 @@
       },
 
       subtitle: {
-        text: this.subtitle || '',
+        text: this.subTitle || '',
         x: -20
       },
 
@@ -106,6 +106,21 @@
       }, this)
 
     });
+  };
+
+
+  Chart.prototype.drawInside = function(selector) {
+    Chart.id = Chart.id || 0;
+
+    var container = document.querySelector(selector),
+        el = document.createElement('div');
+
+    el.id = Chart.id;
+    container.appendChild(el);
+    this.setDOMId(el.id);
+    this.draw();
+
+    Chart.id += 1;
   };
 
   window.Chart = Chart;

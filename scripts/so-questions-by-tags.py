@@ -4,15 +4,22 @@ import time
 from collections import defaultdict
 
 FRAMEWORKS = [
-  'angularjs',
-  'knockout.js',
-  'ember.js',
-  'backbone.js',
-  'reactjs',
-  'meteor',
-  'derby',
-  'bem',
-  'polymer',
+#  'twitter-flight',
+#  'om',
+  'marionette',
+  'ampersand.js',
+  'reactjs-flux',
+  'famo.us',
+  'ionic-framework',
+#  'angularjs',
+#  'knockout.js',
+#  'ember.js',
+#  'backbone.js',
+#  'reactjs',
+#  'meteor',
+#  'derby',
+#  'bem',
+#  'polymer',
 ]
 
 DATES = []
