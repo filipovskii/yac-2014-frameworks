@@ -70,13 +70,72 @@ tags = {
     ]
   },
 
-  'swiss': {
-    'swiss/monolythic': [
-      'meteor', 'angular', 'ember',
-      'polymer', 'knockout',
+  'focus': {
+    'focus/monolythic': [
+      'meteor',
+      'angular', 'ember',
       'backbone', 'marionette'
     ],
-    'swiss/SRP': ['react', 'flight', 'flux', 'om'],
+    'focus/focused': [
+      'react',
+      'polymer',
+      'knockout',
+      'flight',
+      'flux',
+      'om'
+    ],
+  },
+
+  'support': {
+    'support/billion-dollar-company': [
+      'polymer',
+      'angular',
+      'react',
+      'flux',
+      'flight'
+    ],
+
+    'support/community': [
+      'knockout',
+      'om',
+      'ionic',
+      'backbone',
+      'ember',
+      'marionette'
+    ],
+
+    'support/investments': [
+      'famous',
+      'meteor'
+    ]
+  },
+
+  'side': {
+    'side/isomorph': ['meteor', 'react', 'om'],
+    'side/polymorph': [
+      'angular',
+      'backbone',
+      'ember',
+      'knockout',
+      'ember',
+      'marionette',
+      'flight',
+    ]
+  },
+
+  'wave': {
+    'wave/1': ['knockout', 'backbone'],
+    'wave/2': [
+      'ember',
+      'meteor',
+      'angular',
+      'marionette'
+    ],
+    'wave/3': [
+      'flight',
+      'react',
+      'polymer'
+    ]
   },
 
   'mob-desk': {

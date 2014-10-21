@@ -131,7 +131,7 @@ allCharts.forEach(function (chart) {
 
 
     frLabel.for = fr;
-    frLabel.innerText = fr;
+    frLabel.textContent = fr;
     frLabel.appendChild(frInput);
 
     frInput.type = 'checkbox';
