@@ -5,6 +5,7 @@
   var Chart = function() {
     this.from = 0;
     this.to = undefined;
+    this.skipEvery = 1;
   };
 
   Chart.prototype.addSeries = function addChartSeries(s) {
@@ -56,6 +57,12 @@
   };
 
 
+  Chart.prototype.setSkipEvery = function(skipEvery) {
+    this.skipEvery = skipEvery;
+    return this;
+  };
+
+
   Chart.prototype.draw = function draw() {
     this.chart = new Highcharts.Chart({
       title: {
@@ -85,8 +92,11 @@
           text: 'Month'
         },
 
-        categories: this.categories.slice(this.from, this.to)
-
+        categories: this.categories
+          .slice(this.from, this.to)
+          .filter(function(x, i) {
+            return i % this.skipEvery === 0;
+          }, this)
       },
 
       yAxis: {
@@ -114,7 +124,11 @@
       series: this.series.map(function(s) {
         return {
           name: s.name,
-          data: s.data.slice(this.from, this.to),
+          data: s.data
+            .slice(this.from, this.to)
+            .filter(function(x, i) {
+              return i % this.skipEvery === 0;
+            }, this),
           color: s.color,
           lineWidth: 3
         };

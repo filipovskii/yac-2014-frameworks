@@ -590,3 +590,21 @@ function _sumArray(arr1, arr2) {
 
   return res;
 }
+
+
+function _smooth(arr) {
+  var result = [], prev, i;
+  prev = arr[0];
+
+  for (i = 0; i < arr.length; i++) {
+    if (i % 2 === 0) {
+      prev = arr[i];
+      result.push(prev);
+      continue;
+    }
+
+    result.push(prev);
+  }
+
+  return result;
+}

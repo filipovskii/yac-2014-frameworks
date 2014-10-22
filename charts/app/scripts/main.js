@@ -26,6 +26,7 @@ soNewQuestionsChart
   .setTitle('Number of new SO questions per month')
   .setSubTitle('Source: StackOverflow.com')
   .setYAxisName('New questions')
+  .setSkipEvery(2)
   .setDOMId('so-questions-new');
 
 
@@ -40,6 +41,7 @@ soNormQuestionsChart
   .setTitle('Normalized number of new SO questions per month')
   .setSubTitle('Source: StackOverflow.com')
   .setYAxisName('Questions Growth, %')
+  .setSkipEvery(2)
   .setDOMId('so-questions-norm');
 
 
