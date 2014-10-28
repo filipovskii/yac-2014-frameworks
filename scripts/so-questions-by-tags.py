@@ -4,13 +4,16 @@ import time
 from collections import defaultdict
 
 FRAMEWORKS = [
+    'jquery',
+    'extjs',
+    'dojo',
 #  'twitter-flight',
 #  'om',
-  'marionette',
-  'ampersand.js',
-  'reactjs-flux',
-  'famo.us',
-  'ionic-framework',
+#  'marionette',
+#  'ampersand.js',
+#  'reactjs-flux',
+#  'famo.us',
+#  'ionic-framework',
 #  'angularjs',
 #  'knockout.js',
 #  'ember.js',
@@ -24,7 +27,7 @@ FRAMEWORKS = [
 
 DATES = []
 
-for year in range(2010, 2015):
+for year in range(2008, 2015):
   for month in range(1, 13):
     if year == 2014 and month == 11:
       break
